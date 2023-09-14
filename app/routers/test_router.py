@@ -15,10 +15,12 @@ async def create_events_route(event: EventsShema):
     result = await create_event(event=event)
     return result
 
+#TODO доделать
 @test_router.put('/event')
 async def change_event_route():
     pass
 
+#TODO доделать
 @test_router.delete('/event')
 async def delete_event_route():
     pass

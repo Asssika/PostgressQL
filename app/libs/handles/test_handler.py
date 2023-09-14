@@ -25,7 +25,7 @@ async def create_event(event: EventsShema) -> Events:
 
         return new_event
 
-
+#TODO исправить ошибку получения событий
 async def get_events() -> List[Events]:
     async with asynс_session() as session:
         stmt = select(Events)
