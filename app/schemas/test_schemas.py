@@ -7,3 +7,11 @@ class EventsShema(BaseModel):
     title: str
     description: str
     datetime: datetime
+
+
+class ProfilesShema(BaseModel):
+    Number: int
+    Name: str
+    Login: str
+    Password: str
+    Pass: int

@@ -3,9 +3,9 @@ from typing import List
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
-from app.schemas.test_schemas import EventsShema
+from app.schemas.test_schemas import EventsShema, ProfilesShema
 from app.setting import get_settings
-from app.libs.postgres.models import Events
+from app.libs.postgres.models import Events, Profiles
 
 settings = get_settings()
 
@@ -32,3 +32,22 @@ async def get_events() -> List[Events]:
         result = await session.execite(stmt)
         events = result.scalars().all()
         return events
+
+async def create_profile(profile: ProfilesShema) -> Profiles:
+    async with asynс_session() as session:
+        new_profile = Profiles(Name=profile.Name,
+                           Login=profile.Login,
+                           Password=profile.Password,
+                           Number=profile.Number,
+                           Pass=profile.Pass)
+        session.add(new_profile)
+        await session.commit()
+
+        return new_profile
+
+async def get_profile() -> List[Profiles]:
+    async with asynс_session() as session:
+        stmt = select(Profiles)
+        result = await session.execite(stmt)
+        profiles = result.scalars().all()
+        return profiles
