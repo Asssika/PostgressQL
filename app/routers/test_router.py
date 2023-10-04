@@ -17,6 +17,7 @@ async def get_profile_route():
 async def create_events_route(event: EventsShema):
     result = await create_event(event=event)
     return result
+
 async def create_profile_route(profile: ProfilesShema):
     result = await create_profile(event=profile)
     return result
