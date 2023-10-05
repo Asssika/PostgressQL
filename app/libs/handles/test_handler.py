@@ -45,7 +45,6 @@ async def create_profile(profile: ProfilesShema) -> Profiles:
 
         return new_profile
 
-
 async def get_profile() -> List[Profiles]:
     async with asynс_session() as session:
         stmt = select(Profiles)

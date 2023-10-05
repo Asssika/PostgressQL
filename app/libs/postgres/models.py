@@ -16,7 +16,6 @@ class Events(Base):
     datetime = Column(DateTime, nullable=False)
     description = Column(String, nullable=True)
 
-
 class Profiles(Base):
     __tablename__ = "users"
     Number = Column(Integer, nullable=False)

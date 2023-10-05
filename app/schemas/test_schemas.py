@@ -9,7 +9,6 @@ class EventsShema(BaseModel):
     datetime: datetime
 
 
-
 class ProfilesShema(BaseModel):
     Number: int
     Name: str
